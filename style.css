@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header {
+  background: grey;
+  width: 100%;
+}
+
+header img,
+footer img {
+  margin: 5px;
+  width: 12%;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+textarea {
+  height: 7.15em;
+  width: 510px;
+}
+
+label{
+  font-weight: bold;
+}
+
+section.mensaje {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  justify-content: center;
+}
+.mensaje img {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.encriptar-desencriptar {
+  display: flex;
+  flex-direction: column;
+}
+
+.encriptar-desencriptar img {
+  width: 45%;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-evenly;
+  transition: 2s all;
+  cursor: pointer;
+}
+
+.botones input {
+  margin-top: 20px;
+  background-color: lightblue;
+  width: 100px;
+  transition: 2s all;
+  cursor: pointer;
+}
+
+.botones input:hover {
+  background-color: blue;
+  transform: scale(1.2);
+}
+
+section.encriptar-desencriptar textarea {
+  margin-bottom: 22px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  background: gray;
+  width: 100%;
+  align-items: center;
+}
+
+footer img {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1048px) {
+  textarea {
+    height: 7.15em;
+    width: 410px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  textarea {
+    height: 7.15em;
+    width: 310px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  main {
+    display: block;
+  }
+  .mensaje,
+  .encriptar-desencriptar {
+    align-items: center;
+  }
+
+  textarea {
+    height: 7.15em;
+    width: 410px;
+  }
+
+  footer {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  main {
+    display: block;
+  }
+  .mensaje,
+  .encriptar-desencriptar {
+    align-items: center;
+  }
+
+  textarea {
+    height: 5.15em;
+    width: 310px;
+  }
+
+  footer {
+    position: relative;
+  }
+}
+
+@media screen and (max-height: 420px) {
+  footer {
+    position: relative;
+  }
+  textarea {
+    height: 5.15em;
+    width: 290px;
+  }
+}
+
+@media screen and (min-height: 730px) {
+  footer {
+    position: absolute;
+    bottom: 0;
+  }
+}

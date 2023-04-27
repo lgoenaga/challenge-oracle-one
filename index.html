@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encriptador - Desencriptador</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <img src="img/logo-brand.jpg" alt="Logo" />
+      </nav>
+    </header>
+
+    <main>
+      <section class="mensaje">
+        <div></div>
+        <img src="img/mensaje.png" alt="Logo-footer" />
+        <label for="txtmensaje">Digite el texto</label>
+        <textarea id="txtmensaje" rows="8" class="txtmensaje"></textarea>
+        <div class="botones">
+          <input type="submit" value="Encriptar" onclick="encryptText()" />
+          <input
+            type="submit"
+            value="Desencriptar"
+            onclick="desencryptText()"
+          />
+        </div>
+        <div></div>
+      </section>
+      <section class="encriptar-desencriptar">
+        <img src="img/encriptacion.jpg" alt="Logo-footer" />
+        <label for="txtencriptar">Texto Encriptado</label>
+        <textarea id="txtencriptar" rows="8"></textarea>
+        <label for="txtdesencriptado">Texto Desencriptado</label>
+        <textarea id="txtdesencriptado" rows="8"></textarea>
+      </section>
+    </main>
+
+    <footer>
+      <img src="img/logo-brand.jpg" alt="Logo-footer" />
+      <p class="copyright">&copy Copyright Luis Goenaga</p>
+    </footer>
+
+    <script>
+      var mensajeTxt = document.getElementById("txtmensaje");
+      var valorEncriptado = document.getElementById("txtencriptar");
+      var valorDesencriptado = document.getElementById("txtdesencriptado");
+
+      // Función para cifrar un texto dado
+
+      function encryptText() {
+        let result = "";
+        const originalText = mensajeTxt.value;
+  
+        if (originalText != null && originalText != "") {
+          // Definimos un objeto con el alfabeto normal y su correspondiente alfabeto cifrado
+          const cipherAlphabet = {
+            a: "n",
+            b: "o",
+            c: "p",
+            d: "q",
+            e: "r",
+            f: "s",
+            g: "t",
+            h: "u",
+            i: "v",
+            j: "w",
+            k: "x",
+            l: "y",
+            m: "z",
+            n: "a",
+            o: "b",
+            p: "c",
+            q: "d",
+            r: "e",
+            s: "f",
+            t: "g",
+            u: "h",
+            v: "i",
+            w: "j",
+            x: "k",
+            y: "l",
+            z: "m",
+            A: "N",
+            B: "O",
+            C: "P",
+            D: "Q",
+            E: "R",
+            F: "S",
+            G: "T",
+            H: "U",
+            I: "v",
+            J: "w",
+            K: "x",
+            L: "Y",
+            M: "z",
+            N: "A",
+            O: "B",
+            P: "C",
+            Q: "D",
+            R: "E",
+            S: "F",
+            T: "G",
+            U: "H",
+            V: "I",
+            W: "J",
+            X: "K",
+            Y: "L",
+            Z: "M",
+          };
+
+          // Recorremos cada letra del texto
+          for (let i = 0; i < originalText.length; i++) {
+            // Si la letra existe en el alfabeto cifrado, la añadimos al resultado
+            // de lo contrario, añadimos la letra original
+            result += cipherAlphabet[originalText[i]] || originalText[i];
+          }
+          valorEncriptado.value = result;
+          if (result != "") {
+            mensajeTxt.value = "";
+            valorDesencriptado.value = "";
+          } 
+        }else {
+            alert("El mensaje no puede estar vacio");
+          }
+      }
+
+      function desencryptText() {
+        let result = "";
+        const originalText = mensajeTxt.value;
+        if (originalText != null && originalText != "") {
+          // Definimos un objeto con el alfabeto normal y su correspondiente alfabeto cifrado
+          const cipherAlphabet = {
+            n: "a",
+            o: "b",
+            p: "c",
+            q: "d",
+            r: "e",
+            s: "f",
+            t: "g",
+            u: "h",
+            v: "i",
+            w: "j",
+            x: "k",
+            y: "l",
+            z: "m",
+            a: "n",
+            b: "o",
+            c: "p",
+            d: "q",
+            e: "r",
+            f: "s",
+            g: "t",
+            h: "u",
+            i: "v",
+            j: "w",
+            k: "x",
+            l: "y",
+            m: "z",
+            N: "A",
+            O: "B",
+            P: "C",
+            Q: "D",
+            R: "E",
+            S: "F",
+            T: "G",
+            U: "H",
+            V: "I",
+            W: "J",
+            X: "K",
+            Y: "L",
+            Z: "M",
+            A: "N",
+            B: "O",
+            C: "P",
+            D: "Q",
+            E: "R",
+            F: "S",
+            G: "T",
+            H: "U",
+            I: "V",
+            J: "W",
+            K: "X",
+            L: "Y",
+            M: "Z",
+          };
+
+          // Recorremos cada letra del texto
+          for (let i = 0; i < originalText.length; i++) {
+            // Si la letra existe en el alfabeto cifrado, la añadimos al resultado
+            // de lo contrario, añadimos la letra original
+            result += cipherAlphabet[originalText[i]] || originalText[i];
+          }
+
+          valorDesencriptado.value = result;
+
+          if (result != "") {
+            mensajeTxt.value = "";
+            valorEncriptado.value = "";
+          }
+        } else {
+          alert("El mensaje no puede estar vacio");
+        }
+      }
+    </script>
+  </body>
+</html>
